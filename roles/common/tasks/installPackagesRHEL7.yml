@@ -1,0 +1,19 @@
+---  
+- name: Add EPEL yum repository for RedHat/CentOS 7
+  become: true
+  when: ansible_os_family == "RedHat" and ansible_distribution_major_version == 7
+  yum_repository:
+   name: epel
+   description: EPEL YUM repo
+   baseurl: https://download.fedoraproject.org/pub/epel/7/x86_64/
+   gpgcheck: no
+
+- name: Install required packages for RedHat/CentOS 7
+  become: true
+  when: ansible_os_family == "RedHat" and ansible_distribution_major_version == 7
+  package: name={{ item }} state=present
+  with_items:
+   - qemu
+   - python-pip
+   - python-virtualenv
+
