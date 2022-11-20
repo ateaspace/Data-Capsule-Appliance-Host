@@ -2,7 +2,7 @@
 - import_tasks: installPackagesRHEL.yml
 - import_tasks: installPackagesRHEL7.yml
 - import_tasks: installPackagesRHEL8.yml
-- import_tasks: installIptabelsRHEL7.yml
+- import_tasks: installIptabelsRHEL7and8.yml
 - import_tasks: setupIPtables.yml
 - import_tasks: userConfiguration.yml
 - import_tasks: backendScriptConfiguration.yml
